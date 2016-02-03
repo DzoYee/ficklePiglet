@@ -36,7 +36,11 @@
       <img src="{{ likes.thumbnail }}">
       <h2> {{ likes.name }} </h2>
       <a ng-href="{{likes.url}}"> {{ likes.url }} </a>
-
     </div>
   </div>
+  <audio id='audio' controls autoplay="true">                                        
+    <source src= "{{play}}" type="audio/mpeg">                           
+  </audio>
+  <button ng-click="changeSrc()"></button>
+
 </ion-content>
