@@ -1,6 +1,6 @@
 angular.module('enki.resource',[])
 
-.controller('resourceController', function($scope, Podcasts, UserResources) {
+.controller('resourceController', function($scope, Podcasts, UserResources, $sce) {
     $scope.selected = [];
     $scope.results = [];
     var user = JSON.parse(window.localStorage.getItem('com.fickle'));
@@ -46,7 +46,7 @@ angular.module('enki.resource',[])
       });
     };
 
-    $scope.dislikeResource = function(resource){;
+    $scope.dislikeResource = function(resource){
       var userpref = {
         'username' : username,
         'ResourceName' : resource
@@ -63,7 +63,10 @@ angular.module('enki.resource',[])
     }
 
 
-    $scope.markAsSeen = function(resource){
+    $scope.markAsSeen = function(resource, link){
+      var audio = document.getElementById('audio');
+      $scope.play = $sce.trustAsResourceUrl(link);
+      audio.load();
       console.log(resource)
       var userHasSeen = {
         'username' : username,

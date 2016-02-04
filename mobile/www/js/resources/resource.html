@@ -1,5 +1,8 @@
 <ion-view>
   <ion-content>
+  <audio id='audio' controls autoplay="true">
+    <source src= "{{play}}" type="audio/mpeg">
+  </audio>
     <ion-item ng-repeat="resource in results">
       <ion-item>
         <a ng-click="likeResource(resource.name)" class="button button-icon icon ion-thumbsup"></a>
@@ -12,7 +15,7 @@
         <ion-item ng-repeat="episode in resource.episodes | orderBy:parseDate"
           ng-model="tag.checked" 
           ng-checked="tag.checked">
-          <a ng-click="markAsSeen(resource.name)" href="{{episode.enclosure.link}}" class="button button-icon icon ion-play"></a>
+          <a ng-click="markAsSeen(resource.name, episode.enclosure.link)" class="button button-icon icon ion-play"></a>
           {{ episode.title }}
         </ion-item>
       <ion-item>  
