@@ -82,4 +82,17 @@ angular.module('enki.resource',[])
         console.error(error);
       });
     }
+
+
+
+      $("#forward").on("click", function(){
+        var player = document.getElementById('player');
+        // var fifteen = (15/player.duration)*100;
+        player.currentTime +=15;
+      });
+      $("#rewind").on("click", function(){
+        var player = document.getElementById('player');
+        // var fifteen = (15/player.duration)*100;
+        player.currentTime -= 15;
+      });
 });
