@@ -35,4 +35,9 @@ node_modules
 # Ignores WebStorm
 .idea
 
+<<<<<<< HEAD
 mobile/platforms
+=======
+# Ignore builds
+mobile/platforms
+>>>>>>> defc3886ffdbc576bfb8277e41c602f56c99f769
