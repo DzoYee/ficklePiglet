@@ -16,6 +16,7 @@ angular.module('enki.elasticSearch', [])
         var isShow = selected.payload.url ? true : false;
         var obj = {name: selected.text, isShow: isShow};
         console.log(obj);
+        console.log("Selected: ", selected);
         Podcasts.setTags(selected);
         $state.go('tab.resource');
       };
